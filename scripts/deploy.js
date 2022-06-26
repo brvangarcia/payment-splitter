@@ -1,18 +1,8 @@
 const main = async () => {
-  const Greeter = await ethers.getContractFactory("Greeter");
-  const contract = await Greeter.deploy();
+  const PaymentSplitter = await ethers.getContractFactory("PaymentSplitter");
+  const contract = await PaymentSplitter.deploy(["0xc0ffee254729296a45a3885639AC7E10F9d54979","0x999999cf1046e68e36E1aA2E0E07105eDDD1f08E"]); //example addresses
   await contract.deployed();
-  await sleep(10000);
-
-  await hre.run("verify:verify", {
-    address: contract.address,
-    constructorArguments: [],
-  });
 };
-
-const sleep = (ms) => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
 
 const runMain = async () => {
   try {
