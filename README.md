@@ -1,12 +1,9 @@
-# Web3 Boilerplate
+# Smart contract payment splitter
 
-This boilerplate is made of Hardhat for smart contract development. The front-end is made of NEXT.JS, Tailwind, and ethers.js
+Split contract payment between addresses
 
-Try running some of the following tasks:
+To deploy contract run:
 
 ```
-clone repo
-create .env from .env.example
-yarn
-yarn dev
+npm hardhat deploy scripts/deploy.js --network NETWORK_NAME
 ```
